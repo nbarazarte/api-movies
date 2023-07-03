@@ -3,7 +3,7 @@ const actorsCreate = require('./createData/actorsCreate');
 const directorCreate = require('./createData/directorsCreate');
 const genresCreate = require('./createData/genresCreate');
 const moviesCreate = require('./createData/moviesCreate');
-
+require('../models')
 const main = async() => {
     try{
         await sequelize.sync({ force: true });

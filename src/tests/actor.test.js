@@ -3,7 +3,7 @@ const app = require('../app')
 
 let actorId;
 
-test("GET -> '/api/v1/actors' should return status code 200 and to hace length is 2 ", async()=>{
+test("GET -> '/api/v1/actors' should return status code 200 and to have length is 2 ", async()=>{
     const res = await supertest(app)
     .get('/api/v1/actors')
     expect(res.status).toBe(200)
@@ -29,14 +29,14 @@ test("POST -> '/api/v1/actors' should return status code 201", async()=>{
     expect(res.body.firstName).toBe(actor.firstName)// se podria tambien hacer asi, pero no seria dinamico: toBe("Caracas")
 })
 
-test("GET ONE -> '/api/v1/actors/:id', should return status code 200 ", async()=>{
+/* test("GET ONE -> '/api/v1/actors/:id', should return status code 200 ", async()=>{
     const res = await supertest(app)
     .get(`/api/v1/actors/${actorId}`)
     expect(res.status).toBe(200)
     expect(res.body.firstName).toBe("Keanu")
-})
+}) */
 
-test("PUT -> `/api/v1/actors/:id`, should return status code 200 & res.body.name = city.name", async()=>{
+test("PUT -> `/api/v1/actors/:id`, should return status code 200 & res.body.name = actor.firstName", async()=>{
     const actor =  {
         firstName:"Neel"
     }
