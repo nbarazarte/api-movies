@@ -42,7 +42,7 @@ test("PUT -> '/api/v1/movies/:id', should return status code 200 & res.body.name
   expect(res.body.name).toBe(movie.name);
 });
 
-test("POST -> '/movies/:id/actors', should return status code 201", async () => {
+test("POST -> '/movies/:id/actors', should return status code 200", async () => {
   const actorBody = {
     firstName: "Blake",
     lastName: "Lively",
@@ -76,7 +76,7 @@ test("POST -> '/movies/:id/actors', should return status code 201", async () => 
   await movie.destroy();
 });
 
-test("POST -> '/movies/:id/directors', should return status code 201", async () => {
+test("POST -> '/movies/:id/directors', should return status code 200", async () => {
   const directorBody = {
     firstName: "Lee Toland",
     lastName: "Krieger",
@@ -110,7 +110,7 @@ test("POST -> '/movies/:id/directors', should return status code 201", async () 
   await movie.destroy();
 });
 
-test("POST -> '/movies/:id/genres', should return status code 201 and res.body.name === body.name", async () => {
+test("POST -> '/movies/:id/genres', should return status code 200", async () => {
   const genresBody = {
     name: "Sci-Fi",
   };
