@@ -12,7 +12,7 @@ let movieId;
 test("GET -> '/api/v1/movies' should return status code 200", async () => {
   const res = await supertest(app).get("/api/v1/movies");
   expect(res.status).toBe(200);
-  //expect(res.body).toHaveLength(2);
+  expect(res.body).toHaveLength(2);
 });
 
 test("POST -> '/api/v1/movies', should return status code 201 ", async () => {
